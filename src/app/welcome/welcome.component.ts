@@ -1,4 +1,6 @@
+import { AppRoutingModule } from './../app-routing.module';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 function hello(){
   alert('Hello!!!');
@@ -10,10 +12,15 @@ function hello(){
 })
 export class WelcomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     // hello()
+  }
+  onsignup(){
+    console.log("signup works");
+    this.router.navigate(['app-signup']);
+    console.log("navigated to signup");
   }
 
 }
